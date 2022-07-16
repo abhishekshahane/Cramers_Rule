@@ -8,17 +8,20 @@ from numpy import linalg
 column_vector = []
 total_matrix = []
 def determinant(x):
+    # I'm not about to write a determinant function myself when numpy exists
     return linalg.det(np.array(x))
 def get_input():
     for i in range(3):
         a = input("Enter a equation: ")
         b = a.split("=")
         column_vector.append(int(b[1].strip(" ")))
+        # Get the relevant coefficients
         c = b[0].replace(" ", "").replace("x",",").replace("y", ",").replace("z","").replace("+","")
         values = c.split(",")
         total_matrix.append([int(value) for value in values])
     return [total_matrix, column_vector]
 d_container = get_input()
+# I'm definitely sure that there's a better way to do this, but meh
 dx = [
     [d_container[1][0], d_container[0][0][1], d_container[0][0][2]],  
     [d_container[1][1], d_container[0][1][1], d_container[0][1][2]],
