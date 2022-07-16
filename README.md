@@ -1,3 +1,5 @@
+# System of equation(3 var) solver
+
 This is essentially a utility to solve systems of equations with three variables.
 Assume your variables to be x, y and z. 
 
